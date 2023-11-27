@@ -4,7 +4,7 @@ This is a demo project for Spring Boot with Module Federation and Angular.
 
 ## How to run
 
-The project hosts a sungle Spring Boot application.
+The project hosts a single Spring Boot application.
 The `/application` folder contains the Angular application.
 The `/library` folder contains a micro frontend application.
 
