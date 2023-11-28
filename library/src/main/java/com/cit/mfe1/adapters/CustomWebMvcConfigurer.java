@@ -1,11 +1,13 @@
 package com.cit.mfe1.adapters;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
+@PropertySource("classpath:mfe1.properties")
 public class CustomWebMvcConfigurer implements WebMvcConfigurer {
 
 	@Override

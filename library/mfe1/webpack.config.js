@@ -2,7 +2,7 @@ const { share, withModuleFederationPlugin } = require('@angular-architects/modul
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'ng-mfe1',
+  name: 'mfe1',
 
   exposes: {
     './Module': './src/app/orders/orders.module.ts',

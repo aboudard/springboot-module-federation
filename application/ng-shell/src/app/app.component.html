@@ -2,6 +2,8 @@
 <ul>
   <li>Home</li>
   <li><a routerLink="users">Users</a></li>
-  <li><a routerLink="orders">Mfe 1</a></li>
+  <li *ngFor="let remote of remotes">
+    <a [routerLink]="remote.routePath">{{remote.displayName}}</a>
+  </li>
 </ul>
 <router-outlet></router-outlet>

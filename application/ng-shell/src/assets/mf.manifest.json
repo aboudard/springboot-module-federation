@@ -1,0 +1,10 @@
+{
+  "mfe1": {
+    "remoteEntry": "http://localhost:8080/ng-shell/mfe1/remoteEntry.js",
+
+    "exposedModule": "./Module",
+    "displayName": "Orders",
+    "routePath": "orders",
+    "ngModuleName": "OrdersModule"
+  }
+}

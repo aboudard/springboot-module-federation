@@ -1,2 +1,2 @@
 // decl.d.ts
-declare module 'ng-mfe1/Module';
+declare module 'mfe1/Module';
