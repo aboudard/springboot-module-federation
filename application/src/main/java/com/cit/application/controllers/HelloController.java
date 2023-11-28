@@ -40,11 +40,9 @@ public class HelloController {
 
 	public static class MicroFrontend {
 		private Manifest mfe1;
-
 		public MicroFrontend(Manifest mfe1) {
 			this.mfe1 = mfe1;
 		}
-
 		public Manifest getMfe1() {
 			return mfe1;
 		}

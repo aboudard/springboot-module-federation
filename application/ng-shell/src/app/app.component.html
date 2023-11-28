@@ -1,6 +1,6 @@
 <h1>{{title}}</h1>
 <ul>
-  <li>Home</li>
+  <li><a routerLink="/">Home</a></li>
   <li><a routerLink="users">Users</a></li>
   <li *ngFor="let remote of remotes">
     <a [routerLink]="remote.routePath">{{remote.displayName}}</a>

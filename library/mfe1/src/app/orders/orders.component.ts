@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { OrdersService } from '../services/orders.service';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  public orders$: Observable<any>;
+
+  constructor(
+    private ordersService: OrdersService
+  ) {
+    this.orders$ = this.ordersService.getOrders();
+  }
 
   ngOnInit(): void {
+
   }
+
+
 
 }

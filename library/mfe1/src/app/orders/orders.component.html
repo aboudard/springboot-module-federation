@@ -1,1 +1,7 @@
 <p>orders works!</p>
+<ng-container *ngIf="(orders$ | async) as orders">
+  <div *ngFor="let order of orders">
+    <p>{{order.id}} / {{order.name}} / {{order.description}}</p>
+  </div>
+</ng-container>
+
