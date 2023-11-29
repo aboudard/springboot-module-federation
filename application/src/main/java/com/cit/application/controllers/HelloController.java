@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @RestController
 public class HelloController {
@@ -33,10 +33,13 @@ public class HelloController {
 	}
 
 	@GetMapping("/api/manifest")
-	public MicroFrontend microfontend() {
+	public EmptyObject microfontend() {
+		return new EmptyObject();
+	}
+	/*public MicroFrontend microfontend() {
 		Manifest mfe1 = new Manifest(remoteEntry, exposedModule, displayName, routePath, ngModuleName, type);
 		return new MicroFrontend(mfe1);
-	}
+	}*/
 
 	public static class MicroFrontend {
 		private Manifest mfe1;
@@ -111,6 +114,11 @@ public class HelloController {
 		public void setType(String type) {
 			this.type = type;
 		}
+
+	}
+
+	@JsonSerialize
+	public static class EmptyObject {
 
 	}
 

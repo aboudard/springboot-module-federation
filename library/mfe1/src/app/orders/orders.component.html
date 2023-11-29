@@ -1,7 +1,7 @@
-<p>orders works!</p>
+<h2>List of orders</h2>
 <ng-container *ngIf="(orders$ | async) as orders">
   <div *ngFor="let order of orders">
-    <p>{{order.id}} / {{order.name}} / {{order.description}}</p>
+    <p>{{order.id}} / {{order.name}} / <a [routerLink]="['view', order.id]">{{order.description}}</a></p>
   </div>
 </ng-container>
 
