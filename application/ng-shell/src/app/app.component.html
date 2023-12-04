@@ -1,5 +1,6 @@
 <h1>{{title}}</h1>
 <ul>
+  <li class="user">## {{(user$ | async)?.name}} ##</li>
   <li><a routerLink="/">Home</a></li>
   <li><a routerLink="users">Users</a></li>
   <li *ngFor="let remote of remotes">

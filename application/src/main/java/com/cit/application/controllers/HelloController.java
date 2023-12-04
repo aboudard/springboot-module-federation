@@ -33,13 +33,13 @@ public class HelloController {
 	}
 
 	@GetMapping("/api/manifest")
-	public EmptyObject microfontend() {
+	/*public EmptyObject microfontend() {
 		return new EmptyObject();
-	}
-	/*public MicroFrontend microfontend() {
+	}*/
+	public MicroFrontend microfontend() {
 		Manifest mfe1 = new Manifest(remoteEntry, exposedModule, displayName, routePath, ngModuleName, type);
 		return new MicroFrontend(mfe1);
-	}*/
+	}
 
 	public static class MicroFrontend {
 		private Manifest mfe1;
