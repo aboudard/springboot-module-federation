@@ -5,7 +5,7 @@ module.exports = withModuleFederationPlugin({
   name: 'mfe1',
 
   exposes: {
-    './Module': './src/app/orders/orders.module.ts',
+    './Orders': './src/app/orders/orders.module.ts',
   },
 
   // Explicitly share packages:
@@ -15,6 +15,7 @@ module.exports = withModuleFederationPlugin({
     "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
     "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
     "@ngrx/store": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+    "core": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
   }),
 
 });
