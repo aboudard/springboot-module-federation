@@ -5,7 +5,8 @@ module.exports = withModuleFederationPlugin({
   name: 'mfe1',
 
   exposes: {
-    './Orders': './src/app/orders/orders.module.ts',
+    './orders': './src/app/orders/orders.module.ts',
+    './plans': './src/app/plans/plans.module.ts',
   },
 
   // Explicitly share packages:

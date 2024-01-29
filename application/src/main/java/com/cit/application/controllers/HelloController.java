@@ -1,5 +1,7 @@
 package com.cit.application.controllers;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,6 +41,35 @@ public class HelloController {
 	public MicroFrontend microfontend() {
 		Manifest mfe1 = new Manifest(remoteEntry, exposedModule, displayName, routePath, ngModuleName, type);
 		return new MicroFrontend(mfe1);
+	}
+
+	@GetMapping("/api/manifests")
+	public MicroFrontend[] microfontends() {
+		Manifest mfe1 = new Manifest(remoteEntry, exposedModule, displayName, routePath, ngModuleName, type);
+		Manifest mfe2 = new Manifest(remoteEntry, "./Plans", "Plans", "/plans", "PlansModule", "module");
+		return new MicroFrontend[] {new MicroFrontend(mfe1), new MicroFrontend(mfe2)};
+	}
+
+	@GetMapping("/api/manifests2")
+	public Map<String,Object> mfe() {
+		return Map.of(
+				"orders",
+				Map.of(
+						"remoteEntry", remoteEntry,
+						"exposedModule", exposedModule,
+						"displayName", displayName,
+						"routePath", routePath,
+						"ngModuleName", ngModuleName,
+						"type", type),
+				"plans",
+				Map.of(
+						"remoteEntry", remoteEntry,
+						"exposedModule", "./plans",
+						"displayName", "Plans",
+						"routePath", "plans",
+						"ngModuleName", "PlansModule",
+						"type", "module")
+		);
 	}
 
 	public static class MicroFrontend {

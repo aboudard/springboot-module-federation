@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await loadManifest("http://localhost:8080/ng-shell/api/manifest")
+    await loadManifest("http://localhost:8080/ng-shell/me/manifests/all");
+    // await loadManifest("http://localhost:8080/ng-shell/api/manifests");
     const httpManifest = getManifest<CustomManifest>();
     const routes = buildRoutes(httpManifest);
     this.router.resetConfig(routes);
