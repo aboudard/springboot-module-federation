@@ -35,15 +35,12 @@ public class ManifestControllerHelper {
 
 	@Autowired
 	void initializeListMap(List<ManifestProvider> manifestProviderList) {
-		// concatenate the getNames() of all ManifestProviders
 		manifestProviderListMap = manifestProviderList
 				.stream()
 				.collect(Collectors.toMap(ManifestProvider::getNames, Function.identity()));
 	}
 
 	public Map<String, Manifest> getAllManifests() {
-		// Set<Map<String, Manifest>> tmp = manifestProvidersListMap.keySet();
-		// Stream<Map.Entry<String, Manifest>> tmp2 = manifestProvidersListMap.keySet().stream().flatMap(map -> map.entrySet().stream());
 		return manifestProvidersListMap.keySet().stream().flatMap(map -> map.entrySet().stream())
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 	}

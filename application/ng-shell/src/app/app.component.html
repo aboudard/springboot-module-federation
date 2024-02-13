@@ -1,10 +1,14 @@
-<h1>{{title}}</h1>
 <ul>
-  <li class="user">## {{(user$ | async)?.name}} ##</li>
-  <li><a routerLink="/">Home</a></li>
-  <li><a routerLink="users">Users</a></li>
+  <li><span class="title">
+    {{title}} -
+  </span></li>
+  <li><a routerLink="home" routerLinkActive="active">Home</a></li>
+  <li><a routerLink="users" routerLinkActive="active">Users</a></li>
   <li *ngFor="let remote of remotes">
-    <a [routerLink]="remote.routePath">{{remote.displayName}}</a>
+    <a [routerLink]="remote.routePath" routerLinkActive="active">{{remote.displayName}}</a>
   </li>
+  <li class="user"><span>## {{ (user$ | async)?.name }} ##</span></li>
 </ul>
+<main>
 <router-outlet></router-outlet>
+</main>

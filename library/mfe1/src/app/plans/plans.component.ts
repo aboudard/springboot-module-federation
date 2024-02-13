@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoreService } from 'core';
 
 @Component({
   selector: 'app-plans',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlansComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private coreService: CoreService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  getCore(): void {
+    alert(this.coreService.getCore());
   }
 
 }
