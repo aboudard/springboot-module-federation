@@ -11,6 +11,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { reducers, metaReducers } from './store';
+import {TitleStrategy} from "@angular/router";
+import {CustomPageTitleStrategy} from "./services/custom-page-title-strategy";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,12 @@ import { reducers, metaReducers } from './store';
     CoreModule,
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [],
+  providers: [
+    {
+      provide: TitleStrategy,
+        useClass: CustomPageTitleStrategy
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

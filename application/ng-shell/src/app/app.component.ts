@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getUser } from 'core';
 import { CustomManifest, CustomRemoteConfig } from './utils/config';
-import { getManifest, loadManifest } from '@angular-architects/module-federation';
+import { getManifest } from '@angular-architects/module-federation';
 import { buildRoutes } from './utils/routes';
 
 @Component({
@@ -13,7 +13,7 @@ import { buildRoutes } from './utils/routes';
 })
 export class AppComponent implements OnInit {
 
-  title = 'ng-shell';
+  title = 'Spring Boot Microfrontend';
   remotes: CustomRemoteConfig[] = [];
   user$ = this.store.select(getUser);
 
@@ -24,8 +24,6 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await loadManifest("http://localhost:8080/ng-shell/me/manifests/all");
-    // await loadManifest("http://localhost:8080/ng-shell/api/manifests");
     const httpManifest = getManifest<CustomManifest>();
     const routes = buildRoutes(httpManifest);
     this.router.resetConfig(routes);

@@ -9,6 +9,7 @@ export function buildRoutes(options: CustomManifest): Routes {
     const entry = options[key];
     return {
       path: entry.routePath,
+        title: entry.displayName,
       loadChildren: () =>
         loadRemoteModule({
           type: 'manifest',

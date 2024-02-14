@@ -4,10 +4,10 @@ import { HomeComponent } from './home/home.component';
 
 export const APP_ROUTES: Routes = [
   {
-    path: 'home', component: HomeComponent
+    path: 'home', component: HomeComponent, title: 'Home'
   },
   {
-    path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+    path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule), title: 'Users'
   },
   {
     path: '', redirectTo: 'home', pathMatch: 'full'
