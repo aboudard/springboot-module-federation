@@ -1,6 +1,8 @@
 # Module Federation / Spring Boot
 
 This is a demo project for Spring Boot with Module Federation and Angular.
+The point of this project is to host an Angular app with multiple micro frontend (mfe) apps, that all run within the same Spring Boot context. 
+No mfe should be hosted separately.
 
 ## How to run
 
