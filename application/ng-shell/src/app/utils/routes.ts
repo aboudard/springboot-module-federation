@@ -1,7 +1,8 @@
 import { Routes } from "@angular/router";
+import { APP_ROUTES } from '../app.routes';
 import { CustomManifest } from "./config";
 import { loadRemoteModule } from "@angular-architects/module-federation";
-import { APP_ROUTES } from "../app-routing.module";
+
 
 export function buildRoutes(options: CustomManifest): Routes {
 
@@ -12,11 +13,11 @@ export function buildRoutes(options: CustomManifest): Routes {
         title: entry.displayName,
       loadChildren: () =>
         loadRemoteModule({
-          type: 'manifest',
-          remoteName: key,
-          exposedModule: entry.exposedModule
+            type: 'module',
+            remoteEntry: entry.remoteEntry,
+            exposedModule: entry.exposedModule
         })
-          .then(m => m[entry.ngModuleName])
+          .then(m => m[entry.routes])
     }
   });
 

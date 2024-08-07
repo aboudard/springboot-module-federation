@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CoreService } from 'core';
 
 @Component({
-  selector: 'app-plans',
-  templateUrl: './plans.component.html',
-  styleUrls: ['./plans.component.scss']
+    selector: 'app-plans',
+    templateUrl: './plans.component.html',
+    styleUrls: ['./plans.component.scss'],
+    standalone: true
 })
 export class PlansComponent implements OnInit {
 

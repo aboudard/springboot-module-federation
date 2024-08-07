@@ -1,60 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary: #04AA6D;
+  --primary-hover: #4CAF50;
+  --primary-active: #49964b;
+  --white: #ffffff;
+}
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
 }
+
 .btn {
-  background-color: #04AA6D!important;
+  background-color: var(--primary)!important;
   border-radius: 5px;
   padding: 0.4rem 0.5rem;
-  color: white;
+  color: var(--white);
   border: 0;
   cursor: pointer;
   &:hover {
-    background-color: #4CAF50!important;
+    background-color: var(--primary-hover)!important;
   }
   &:active {
-    background-color: #49964b!important;
+    background-color: var(--primary-active)!important;
   }
 }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  &:hover {
+    color: var(--primary-hover);
+  }
+}
+
 main {
   padding: 0 1rem;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  border-bottom: 1px solid #e7e7e7;
-  background-color: #f3f3f3;
-}
+header {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+  }
 
-li {
-  float: left;
-}
+  li {
+    float: left;
+  }
 
-li a, li span {
-  display: block;
-  color: #666;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+  li a, li span {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
 
-li a:hover:not(.active) {
-  background-color: #ddd;
-}
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
 
-li a.active {
-  color: white;
-  background-color: #04AA6D;
-  &:hover {
-    background-color: #4CAF50;
+  li a.active {
+    color: var(--white);
+    background-color: var(--primary);
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+  li:last-child {
+    float: right;
+  }
+  span.title {
+    font-weight: bold;
   }
 }
-li:last-child {
-  float: right;
+
+table.list {
+    border-collapse: collapse;
+    width: 100%;
+
+   td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  tr:nth-child(even){background-color: #f2f2f2;}
+
+  tr:hover {background-color: #ddd;}
+
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--primary);
+    color: var(--white);
+  }
 }
-span.title {
-  font-weight: bold;
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
 }

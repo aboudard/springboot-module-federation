@@ -5,6 +5,7 @@ public class Manifest {
 	private String exposedModule;
 	private String displayName;
 	private String routePath;
+	private String routes;
 	private String ngModuleName; //  TODO find a more generic name for next versions with routes
 	private String type;
 
@@ -13,12 +14,14 @@ public class Manifest {
 			String exposedModule,
 			String displayName,
 			String routePath,
+			String routes,
 			String ngModuleName,
 			String type) {
 		this.remoteEntry = remoteEntry;
 		this.exposedModule = exposedModule;
 		this.displayName = displayName;
 		this.routePath = routePath;
+		this.routes = routes;
 		this.ngModuleName = ngModuleName;
 		this.type = type;
 	}
@@ -53,6 +56,14 @@ public class Manifest {
 
 	public void setRoutePath(String routePath) {
 		this.routePath = routePath;
+	}
+
+	public String getRoutes() {
+		return routes;
+	}
+
+	public void setRoutes(String routes) {
+		this.routes = routes;
 	}
 
 	public String getNgModuleName() {

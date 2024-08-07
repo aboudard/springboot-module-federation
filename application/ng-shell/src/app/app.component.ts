@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getUser } from 'core';
 import { CustomManifest, CustomRemoteConfig } from './utils/config';
 import { getManifest } from '@angular-architects/module-federation';
 import { buildRoutes } from './utils/routes';
+import { NgFor, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [RouterLink, RouterLinkActive, NgFor, RouterOutlet, AsyncPipe]
 })
 export class AppComponent implements OnInit {
 
