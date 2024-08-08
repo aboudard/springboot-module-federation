@@ -4,6 +4,7 @@ export type CustomRemoteConfig = RemoteConfig & {
   exposedModule: string;
   displayName: string;
   routePath: string;
+  routes: string;
   ngModuleName: string;
 };
 

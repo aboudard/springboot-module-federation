@@ -1,14 +1,19 @@
-<ul>
-  <li><span class="title">
+<header>
+	<ul>
+		<li><span class="title">
     {{title}} -
   </span></li>
-  <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-  <li><a routerLink="users" routerLinkActive="active">Users</a></li>
-  <li *ngFor="let remote of remotes">
-    <a [routerLink]="remote.routePath" routerLinkActive="active">{{remote.displayName}}</a>
-  </li>
-  <li class="user"><span>## {{ (user$ | async)?.name }} ##</span></li>
-</ul>
+		<li><a routerLink="home" routerLinkActive="active">Home</a></li>
+		<li><a routerLink="users" routerLinkActive="active">Users</a></li>
+		<li *ngFor="let remote of remotes">
+			<a [routerLink]="remote.routePath" routerLinkActive="active">{{remote.displayName}}</a>
+		</li>
+		<li class="user"><span>## {{ (user$ | async)?.name }} ##</span></li>
+	</ul>
+</header>
 <main>
 <router-outlet></router-outlet>
 </main>
+<footer>
+	<p>Angular / Spring Boot - Module Federation v16</p>
+</footer>

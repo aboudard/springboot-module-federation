@@ -30,6 +30,7 @@ public class Mfe1ManifestProvider implements ManifestProvider {
 						"./orders",
 						"Orders",
 						"orders",
+						"ordersRoutes",
 						"OrdersModule",
 						"module"
 						),
@@ -39,6 +40,7 @@ public class Mfe1ManifestProvider implements ManifestProvider {
 						"./plans",
 						"Plans",
 						"plans",
+						"plansRoutes",
 						"PlansModule",
 						"module"
 						)

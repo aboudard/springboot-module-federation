@@ -1,8 +1,19 @@
 <h2>List of orders</h2>
 <span>loading: {{isLoading$ | async}} - current User: {{(user$ | async)?.name}}</span>
 <ng-container *ngIf="(orders$ | async) as orders">
-  <div *ngFor="let order of orders">
-    <p>{{order.id}} / {{order.name}} / <a [routerLink]="['view', order.id]">{{order.description}}</a></p>
-  </div>
+	<table class="list">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Description</th>
+		</tr>
+		<ng-container>
+			<tr *ngFor="let order of orders">
+				<td>{{order.id}}</td>
+				<td>{{order.name}}</td>
+				<td><a [routerLink]="['view', order.id]">{{order.description}}</a></td>
+			</tr>
+		</ng-container>
+	</table>
 </ng-container>
 

@@ -1,21 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-view',
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.scss']
+    selector: 'app-view',
+    templateUrl: './view.component.html',
+    styleUrls: ['./view.component.scss'],
+    standalone: true,
+    imports: []
 })
-export class ViewComponent implements OnInit {
+export class ViewComponent {
 
-  public id$: Observable<any>;
-
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.id$ = this.activatedRoute.params.pipe(map((p) => p['id']));
-  }
-
-  ngOnInit(): void {
-  }
+    @Input() id!: string;
 
 }
