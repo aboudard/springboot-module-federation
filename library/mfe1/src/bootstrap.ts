@@ -1,5 +1,5 @@
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withHashLocation, withRouterConfig } from '@angular/router';
 import { APP_ROUTES } from './app/app.routes';
 import { environment } from './environments/environment';
 import { AppComponent } from './app/app.component';
@@ -15,9 +15,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
+
+        provideRouter(APP_ROUTES, withComponentInputBinding(), withHashLocation(), withRouterConfig({paramsInheritanceStrategy: 'always'})),
+
         importProvidersFrom(
             BrowserModule,
-            RouterModule.forRoot(APP_ROUTES, { useHash: true }),
             StoreModule.forRoot(reducers, { metaReducers }),
             !environment.production ? StoreDevtoolsModule.instrument() : []),
         provideHttpClient(withInterceptorsFromDi())

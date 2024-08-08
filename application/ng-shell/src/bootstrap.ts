@@ -10,7 +10,7 @@ import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http'
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CustomPageTitleStrategy } from './app/services/custom-page-title-strategy';
-import { RouterModule, TitleStrategy } from '@angular/router';
+import { provideRouter, TitleStrategy, withComponentInputBinding, withHashLocation, withRouterConfig } from '@angular/router';
 
 if (environment.production) {
   enableProdMode();
@@ -18,10 +18,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
+        provideRouter(APP_ROUTES, withComponentInputBinding(), withHashLocation(), withRouterConfig({paramsInheritanceStrategy: 'always'})),
+
         importProvidersFrom(
             FormsModule,
             BrowserModule,
-            RouterModule.forRoot(APP_ROUTES, { useHash: true  }),
             StoreModule.forRoot(reducers, { metaReducers }),
             CoreModule,
             !environment.production ? StoreDevtoolsModule.instrument() : []),
