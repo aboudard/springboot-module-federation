@@ -1,4 +1,4 @@
-import { Action, createReducer, on } from '@ngrx/store';
+import { createReducer } from '@ngrx/store';
 
 
 export const counterFeatureKey = 'counter';
@@ -13,5 +13,4 @@ export const initialState: CounterState = {
 
 export const reducer = createReducer(
   initialState,
-
 );
