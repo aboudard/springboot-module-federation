@@ -101,6 +101,14 @@ table.list {
   }
 }
 
+.badge {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+
 footer {
   position: fixed;
   left: 0;
