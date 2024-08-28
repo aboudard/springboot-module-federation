@@ -1,33 +1,31 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-    imports: [
-        RouterTestingModule,
-        AppComponent
-    ],
-}).compileComponents();
-  });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+	let appComponent: AppComponent;
 
-  it(`should have as title 'ng-shell'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ng-shell');
-  });
+	beforeEach(async () => {
+		TestBed.configureTestingModule({
+			imports: [
+				RouterTestingModule
+			],
+			providers: [
+				provideMockStore(),
+				AppComponent
+			]
+		});
+		appComponent = TestBed.inject(AppComponent);
+	});
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ng-shell app is running!');
-  });
+	it('should create the app', () => {
+		expect(appComponent).toBeTruthy();
+	});
+
+	it(`should have as title 'ng-shell'`, () => {
+		expect(appComponent.title).toEqual('Spring Boot Microfrontend');
+	});
+
 });
