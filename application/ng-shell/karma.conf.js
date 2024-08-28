@@ -28,8 +28,7 @@ module.exports = function (config) {
 			dir: require('path').join(__dirname, './coverage/ng-shell'),
 			subdir: '.',
 			reporters: [
-				{type: 'html'},
-				{type: 'text-summary'}
+				{type: 'lcov'}
 			]
 		},
 		reporters: ['mocha'],

@@ -1,0 +1,9 @@
+{
+	"name": "application",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "cd ng-shell && npm run build",
+		"install": "cd ng-shell && npm install --no-save",
+		"test": "cd ng-shell && npm run test"
+	}
+}

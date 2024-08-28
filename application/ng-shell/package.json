@@ -6,7 +6,7 @@
 		"start": "ng serve",
 		"build:shell": "ng build --base-href /ng-shell/ --configuration production",
 		"watch:shell": "ng build --base-href /ng-shell/ --watch --configuration development",
-		"test": "ng test --watch=false --code-coverage",
+		"test": "ng test --watch=false --code-coverage --browsers=ChromeHeadless",
 		"lint": "ng lint",
 		"run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
 	},
